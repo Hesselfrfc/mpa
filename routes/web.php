@@ -53,8 +53,13 @@ Route::get('/contact', function(){
 */
 
 
-Route::get('index', [GenreController::class, 'show']);
+Route::get('/index', [GenreController::class, 'show']);
 
 //Route::get('test', [SongController::class, 'show']);
 
-Route::GET('test/{id}', [GenreController::class, 'showSongs']);
+Route::GET('genre/{id}', [GenreController::class, 'showSongsForGenre']);
+
+Route::GET('song/{SongId}', [SongController::class, 'showSong']);
+
+Route::GET('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist.index');
+Route::GET('/playlist/add/{id}', [App\Http\Controllers\PlaylistController::class, 'add'])->name('playlist.add');

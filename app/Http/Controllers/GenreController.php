@@ -7,23 +7,19 @@ use App\Models\Genre;
 
 class GenreController extends Controller
 {
-    //
-
+    // Show all genres
     function show()
     {
         $data  = Genre::all();
         return view('index' , ['genres'=>$data]);
     }
 
-    function showSongs($id)
-    {    
-        //$test = Genre::find($id);
-        //$data = Genre::join('songs', 'genres.id', '=', 'songs.genre_id')
-        //->where('songs.genre_id', '=', $test->id)
-        //->get(['genres.*', 'songs.*']);
-        //return view('test' , ['songs'=>$data]);
 
-        $data = Genre::find($id);
-        return view('test' , ['songs'=>$data->songs]);
+    // Show details of song which are related to the right genre
+    function showSongsForGenre($genre_id)
+    {
+        $data = Genre::find($genre_id);
+        //dd($data);
+        return view('genre' , ['songs'=>$data->songs]);
     }
 }

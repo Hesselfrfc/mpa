@@ -8,12 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class SongController extends Controller
 {
-    //
-    function show()
+    function showSong($song_id)
     {
-        $data = Song::join('genres', 'genres.id', '=', 'songs.genreId')
-        ->where('songs.genreId', '=', 1)
-        ->get(['genres.*', 'songs.*']);
-        return view('test' , ['songs'=>$data]);
+        $data  = Song::find($song_id);
+        //dd($data);
+        return view('song' , $data);
     }
 }

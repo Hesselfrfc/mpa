@@ -19,10 +19,10 @@
             <tbody>
             @foreach($genres as $genre)
                 <tr>
-                <th scope="row">{{$genre['id']}}</th>
-                <td><a href="test/{{$genre['id']}}">{{$genre['genre_name']}}</a></td>
+                <th scope="row">{{ $genre->id }}</th>
+                <td><a href="genre/{{ $genre->id }}">{{ $genre->genre_name }}</a></td>
                 </tr>
-                @endforeach
+            @endforeach
             </tbody>
         </table>
 
