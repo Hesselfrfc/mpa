@@ -28,6 +28,10 @@ class SessionPlaylist //extends Model
         $this->saveToSession();
     }
 
+    function showSongsInPlaylist() {
+        return $this->items;
+    }
+
     function saveToSession() {
         Session::put('playlist', $this->items);
         Session::save();

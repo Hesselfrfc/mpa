@@ -62,4 +62,10 @@ Route::GET('genre/{id}', [GenreController::class, 'showSongsForGenre']);
 Route::GET('song/{SongId}', [SongController::class, 'showSong']);
 
 Route::GET('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist.index');
-Route::GET('/playlist/add/{id}', [App\Http\Controllers\PlaylistController::class, 'add'])->name('playlist.add');
+
+Route::GET('/playlist/add/{song_id}', [App\Http\Controllers\PlaylistController::class, 'add'])->name('playlist.add');
+
+//Route::GET('song/{SongId}/add', [App\Http\Controllers\PlaylistController::class, 'add'])->name('playlist.add');
+
+Route::GET('/playlist/session', [App\Http\Controllers\PlaylistController::class, 'showSession'])->name('playlist.session');
+

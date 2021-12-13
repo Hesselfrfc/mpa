@@ -16,8 +16,9 @@
         <li>{{ $genre_id }}</li>
         <li><a href="/playlist/add/{{ $id }}">Voeg toe aan playlist</a></li>
         </ul>
-        
+
         <a href="/genre/{{ $genre_id }}">Terug naar vorige pagina</a>
+        <a href="/playlist/session">Bekijk playlist</a>
  
     </div>
 </div>
